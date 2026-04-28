@@ -130,8 +130,8 @@ exports.StipePaymentIntegration = async (req,res) => {
       _id, title, author, noOfPages, image, price, discountPrice, abstract, publisher, language, isbn, category, userMail, bought: email, status: "sold"
     }
     const session = await stripe.checkout.sessions.create({
-      success_url: "http://localhost:5173/payment-success",
-      cancel_url: "http://localhost:5173/payment-failed",
+      success_url: "https://book-store-full-stack-two.vercel.app/payment-success",
+      cancel_url: "https://book-store-full-stack-two.vercel.app/payment-failed",
       payment_method_types: ['card','upi'],
       line_items,
       metadata,
